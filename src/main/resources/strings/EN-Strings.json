@@ -1,0 +1,18 @@
+{
+  "mainTitle": "Forever Midnight",
+  "mainTitleOpts": [
+    "Start Game",
+    "Options",
+    "Credits",
+    "Exit"
+  ],
+
+  "optionsTitle": "Options",
+  "optionsLineA":  "Font Scale",
+
+  "creditsTitle": "Credits",
+  "creditsLineA": "Lead Programmer",
+  "creditsLineB": "Acknowledgements",
+
+  "startSceneTitle": "Study Me"
+}

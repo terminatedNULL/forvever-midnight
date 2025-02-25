@@ -1,0 +1,46 @@
+{
+  // All spritesheets needed in this map, for preloading
+  "backgroundSheets": [
+    "sheetName1", "sheetName2"
+  ],
+  "foregroundSheets": [
+    "sheetName1", "sheetName2"
+  ],
+  "portalSheets": [
+    "sheetName1", "sheetName2"
+  ],
+
+  "chunkCount": 1,
+  "chunks": [
+    {
+      "id": 0,
+      "name": "startSceneTitle", // The key of the string in Game.regionStrings (name of room)
+      "directions": [null, null, 1, null], // Which directions can be loaded by walking into them
+      "background": [ // The static background sprites
+        [1, 1, 1],
+        [2, 0, null],
+        [3, 3, null]
+      ],
+      "foreground": [ // The overlapping foreground sprites & interactables
+        [2, 2, 2],
+        [null, 4, null],
+        [null, null, null]
+      ]
+    },
+    {
+      "id": 1,
+      "name": "",
+      "directions": [0, null, null, null],
+      "background": [
+        [1, 1, 1],
+        [2, 0, null],
+        [3, 3, null]
+      ],
+      "foreground": [
+        [2, 2, 2],
+        [null, 4, null],
+        [null, null, null]
+      ]
+    }
+  ]
+}

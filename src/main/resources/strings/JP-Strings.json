@@ -1,0 +1,18 @@
+{
+  "mainTitle": "まよなか えいえん に",
+  "mainTitleOpts": [
+    "スタート",
+    "オプション",
+    "クレジット",
+    "エグジット"
+  ],
+
+  "optionsTitle": "オプション",
+  "optionsLineA":  "フォントスケール",
+
+  "creditsTitle": "クレジット",
+  "creditsLineA": "リードプログラマー",
+  "creditsLineB": "シャジ",
+
+  "startSceneTitle": "べんきょうして"
+}
