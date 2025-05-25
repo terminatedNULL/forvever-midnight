@@ -20,6 +20,7 @@ import org.jetbrains.skiko.toImage
 import java.awt.image.BufferedImage
 import javax.imageio.ImageIO
 import javax.imageio.metadata.IIOMetadataNode
+import kotlin.random.Random
 
 fun JsonObject.rawStr(key: String): String {
     return this[key]?.jsonPrimitive?.content ?: ""

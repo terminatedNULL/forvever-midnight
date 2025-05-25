@@ -1,8 +1,6 @@
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.material.Typography
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -22,7 +20,6 @@ enum class GameFont(val fontObj: FontFamily) {
 /*
  * Full Unicode Fonts
  */
-
 val backupFont = FontFamily(
     Font(resource = "fonts/lana-pixel.ttf")
 )
@@ -86,8 +83,7 @@ fun mainTypography(): Typography {
             fontFamily = pixelMPlus12,
             fontWeight = FontWeight.Bold,
             letterSpacing = (stylePreferences.fontScale).sp,
-            color = Color.White,
-
+            color = Color.White
         )
     )
 }

@@ -1,5 +1,6 @@
 package scenes
 
+import androidx.compose.animation.animateColor
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
@@ -24,11 +25,10 @@ import engine.classes.generateStar
 import engine.controllers.InputController
 import engine.thirdparty.quarks.CreateParticles
 import engine.thirdparty.quarks.particle.*
-import engine.utils.rawArray
-import engine.utils.rawStr
-import engine.utils.with
+import engine.utils.*
 import kotlinx.coroutines.delay
 import popupWindowModifier
+import kotlin.random.Random
 
 @Composable
 fun TitleScene() {
@@ -122,18 +122,37 @@ fun TitleScene() {
                             )
                         )
 
+                        var targetColor by remember { mutableStateOf(randomPastelColor()) }
+
+                        LaunchedEffect(Unit) {
+                            while (true) {
+                                delay(Random.nextLong(1000, 2000))
+                                targetColor = randomPastelColor()
+                            }
+                        }
+
+                        val color by transition.animateColor(
+                            initialValue = Color.White,
+                            targetValue = targetColor,
+                            animationSpec = infiniteRepeatable(
+                                animation = tween(durationMillis = 1000, easing = LinearEasing),
+                                repeatMode = RepeatMode.Reverse
+                            )
+                        )
+
                         Text(
                             modifier = Modifier
                                 .offset(y = yOffset.dp)
                                 .padding(5.dp),
                             text = char.toString(),
-                            color = Color.White,
+                            color = color,
                             style = MaterialTheme.typography.h3
-                                .with(fontWeight = FontWeight.Bold, letterSpacing = 5.sp)
+                                .copy(fontWeight = FontWeight.Bold, letterSpacing = 5.sp)
                         )
                     }
                 }
-                
+
+
                 Spacer(Modifier.height(100.dp))
 
                 // Generate buttons
@@ -181,7 +200,13 @@ fun setupGlobalResources() {
         (Game.screenSize.width / 2).dp, (Game.screenSize.height / 2).dp,
         (Game.screenSize.width / 4).dp, (Game.screenSize.height / 4).dp,
         popupWindowModifier, ComposableUUIDBlock {
-            Text("Pause Menu")
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp),
+            ) {
+                Text("Pause", modifier = Modifier.align(Alignment.Center))
+            }
         }
     )
 }

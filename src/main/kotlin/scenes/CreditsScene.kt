@@ -56,6 +56,7 @@ fun CreditsScene() {
                 ) {
                     Text("Alexander Yauchler", style = MaterialTheme.typography.body1)
                     Text("Stefan Jovanovic", style = MaterialTheme.typography.body1)
+                    Text("Nikhil Chaudhari", style = MaterialTheme.typography.body1)
                 }
             }
 
